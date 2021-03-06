@@ -1,0 +1,64 @@
+name: Demo
+configs:
+  Debug: debug
+  Release: release
+options:
+  bundleIdPrefix: com.rcampbell
+  createIntermediateGroups: true
+  defaultConfig: Debug
+  indentWidth: 4
+  tabWidth: 4
+  usesTabs: false
+  xcodeVersion: 12.4
+  deploymentTarget:
+    iOS: 14.0
+targets:
+  Demo:
+    name: Demo
+    type: application
+    platform: iOS
+    sources:
+    - path: Demo
+    settings:
+      base:
+        SWIFT_VERSION: 5
+  DemoTests:
+    name: DemoTests
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+    - DemoTests
+    dependencies:
+    - target: Demo
+    settings:
+      base:
+        SWIFT_VERSION: 5
+  DemoUITests:
+    name: DemoUITests
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+    - DemoUITests
+    dependencies:
+    - target: Demo
+    settings:
+      base:
+        SWIFT_VERSION: 5
+schemes:
+  Demo:
+    build:
+      targets:
+        Demo: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+      - DemoTests
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
