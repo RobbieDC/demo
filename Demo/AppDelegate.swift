@@ -1,7 +1,11 @@
 import UIKit
 
-@main
+@UIApplicationMain
 internal class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    internal var window: UIWindow?
+
+    private var coordinator: AppCoordinator!
 
     internal func application(
         _ application: UIApplication,
@@ -9,6 +13,8 @@ internal class AppDelegate: UIResponder, UIApplicationDelegate {
             UIApplication.LaunchOptionsKey: Any
         ]?
     ) -> Bool {
+        self.coordinator = AppCoordinator(window: self.window!)
+        self.coordinator.start()
         return true
     }
 }

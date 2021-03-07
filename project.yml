@@ -9,9 +9,9 @@ options:
   indentWidth: 4
   tabWidth: 4
   usesTabs: false
-  xcodeVersion: 12.4
+  xcodeVersion: 11.7
   deploymentTarget:
-    iOS: 14.0
+    iOS: 13.0
 targets:
   Demo:
     name: Demo
@@ -19,6 +19,8 @@ targets:
     platform: iOS
     sources:
     - path: Demo
+    dependencies:
+    - carthage: Flow
     settings:
       base:
         SWIFT_VERSION: 5
