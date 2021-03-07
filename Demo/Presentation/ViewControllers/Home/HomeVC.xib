@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="Demo" customModuleProvider="target">
             <connections>
+                <outlet property="accountsButton" destination="HW0-C1-shY" id="Qmb-qC-sjR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,6 +24,9 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HW0-C1-shY">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="accountsPressed" destination="-1" eventType="touchUpInside" id="emy-AJ-giN"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>

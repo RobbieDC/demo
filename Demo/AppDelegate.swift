@@ -13,8 +13,11 @@ internal class AppDelegate: UIResponder, UIApplicationDelegate {
             UIApplication.LaunchOptionsKey: Any
         ]?
     ) -> Bool {
-        self.coordinator = AppCoordinator(window: self.window!)
+        let navController = UINavigationController()
+        self.coordinator = AppCoordinator(navController: navController)
         self.coordinator.start()
+        self.window?.rootViewController = navController
+        self.window?.makeKeyAndVisible()
         return true
     }
 }
